@@ -1,0 +1,41 @@
+<ng-sidebar-container>
+    <ng-sidebar [(opened)]="_opened" mode="push">
+        <div class="itemListSidebar">
+            <a type="button" routerLink="" class="text-decoration-none" (click)="_toggleOpened()">
+                <i class="material-icons">home</i><h6>Accueil</h6>
+            </a>
+        </div>
+        
+        <div class="itemListSidebar">
+            <a type="button" routerLink="contact" class="text-decoration-none" (click)="_toggleOpened()">
+                <i class="material-icons">chat</i><h6>Contact</h6>
+            </a>
+        </div>
+            
+        <div class="itemListSidebar">
+            <a type="button" routerLink="history" class="text-decoration-none" (click)="_toggleOpened()">
+                <i class="material-icons">history</i><h6>Historique</h6>
+            </a>
+        </div>
+        
+        <div class="itemListSidebar">
+            <a type="button" routerLink="rankings" class="text-decoration-none" (click)="_toggleOpened()">
+                <i class="material-icons">equalizer</i><h6>Classement</h6>
+            </a>
+        </div>
+
+    </ng-sidebar>
+    <div ng-sidebar-content>
+        <div class="menu">
+            <div class="divMenu">
+                <button type="button" class="btn btn-secondary" (click)="_toggleOpened()"><span class="material-icons">menu</span></button>
+                <p style="margin-bottom: 0%; padding-left: 10px; color:white; font-size: 2em;">CryptoTrade</p>
+            </div>
+            <div class="divMenu">
+                <button type="button" class="btn"><i class="material-icons notifWhite">notifications_none</i></button>
+                <app-account-drop-down></app-account-drop-down>
+            </div>
+        </div>
+        <router-outlet></router-outlet>
+    </div>
+</ng-sidebar-container>

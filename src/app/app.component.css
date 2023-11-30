@@ -1,0 +1,48 @@
+ng-sidebar-container {
+  height: 100vh;
+}
+
+::ng-deep .ng-sidebar {
+  background-color: rgb(71, 95, 107);
+  width: 200px;
+  padding: 4em 1em;
+}
+
+.itemListSidebar{
+  margin-top: 25px;
+}
+
+.itemListSidebar > a{
+  color: whitesmoke;
+  display: flex; 
+  justify-content: flex-start;
+}
+
+.itemListSidebar > a > h6{
+  font-size: 1.5em;
+}
+
+.itemListSidebar > a > i{
+  padding-top: 4px;
+  padding-right: 10px;
+}
+
+.menu {
+  background-color: #344955;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-height: 55px;
+  padding: 10px;
+}
+
+.divMenu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.notifWhite {
+  color: white;
+}
