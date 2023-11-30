@@ -1,0 +1,36 @@
+<div class="container">
+    <h2>Inscription</h2>
+  
+    <form [formGroup]="userForm" (ngSubmit)="onSubmitForm()">
+      <div class="form-group">
+        <label for="pseudo">Pseudo*</label>
+        <input type="text" id="pseudo" class="form-control" formControlName="pseudo">
+        <div class="text-error" *ngIf="userForm.touched && userForm.controls.pseudo.errors?.required">
+          Le pseudo est obligatoire
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email">Adresse e-mail*</label>
+        <input type="email" id="email" class="form-control" formControlName="email">
+        <div class="text-error" *ngIf="userForm.touched && userForm.controls.email.errors?.email">
+          L'email n'a pas le bon format
+        </div>
+        <div class="text-error" *ngIf="userForm.touched && userForm.controls.email.errors?.required">
+          L'email est obligatoire
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="password">Mot de passe*</label>
+        <input type="password" id="password" class="form-control" formControlName="password">
+        <div class="text-error" *ngIf="userForm.touched && userForm.controls.password.errors?.required">
+          Le mot de passe est obligatoire
+        </div>
+        <div class="text-error" *ngIf="userForm.touched && userForm.controls.password.errors?.minlength">
+          Le mot de passe doit avoir une taille de minimum {{ userForm.controls.password.errors?.minlength.requiredLength }} caractères
+        </div>
+      </div>
+      <p class="text-center">
+        <button type="submit" class="btn btn-success">S'inscrire</button>
+      </p>
+    </form>
+  </div>

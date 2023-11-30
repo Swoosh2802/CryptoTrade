@@ -1,0 +1,33 @@
+<div class="d-flex justify-content-center">
+    <div class="tableWidth">
+        <table class="table table-dark table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Image</th>
+                    <th scope="col">Nom</th>
+                    <th scope="col">Cours</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngIf="isLoading">
+                    <td colspan="3" class="text-center">
+                        <div class="spinner-border text-white" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr *ngFor="let crypto of cryptos; let i = index">
+                    <td [width]="5" class="text-center"><img src='https://www.cryptocompare.com/{{crypto.ImageUrl}}' style="width: 50%;"/></td>
+                    <td [width]="55">
+                        <span class="font-weight-bold">{{ crypto.CoinName }}</span><br>
+                        <span>{{ crypto.Symbol }}</span>
+                    </td>
+                    <td [width]="40" class="text-right">
+                        <span>{{ tabCrypto[i] }} €</span><br>
+                        <span class="font-weight-bold"></span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

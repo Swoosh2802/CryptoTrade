@@ -1,0 +1,17 @@
+<div *ngIf="loggedUser.isConnected(); else notLogged">
+  <div class="dropdown show">
+    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      {{ loggedUser.getUser().pseudo }}
+    </a>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+      <a class="dropdown-item" href="#">Paramètres</a>
+      <a class="dropdown-item" href="#" *ngIf='isAdmin==true'>Panel Admin</a>
+      <hr>
+      <a class="dropdown-item" (click)="disconnected()">Déconnexion</a>
+    </div>
+  </div>
+</div>
+
+<ng-template #notLogged>
+  <a class="btn btn-secondary" routerLink="login" role="button" aria-haspopup="true" aria-expanded="false">Se connecter</a>
+</ng-template>

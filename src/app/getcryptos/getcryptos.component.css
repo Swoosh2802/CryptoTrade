@@ -1,0 +1,8 @@
+.tableWidth{
+    width: 90%;
+}
+
+table.table{
+    border-top: none;
+    border-radius: 10px;
+}
